@@ -11,15 +11,15 @@ class PgbackupsArchive::Storage
   def connection
     Fog::Storage.new({
       :provider              => "AWS",
-      :aws_access_key_id     => ENV["PGBACKUPS_AWS_ACCESS_KEY_ID"],
-      :aws_secret_access_key => ENV["PGBACKUPS_AWS_SECRET_ACCESS_KEY"],
-      :region                => ENV["PGBACKUPS_REGION"],
+      :aws_access_key_id     => ENV["PGARCH_AWS_ACCESS_KEY_ID"],
+      :aws_secret_access_key => ENV["PGARCH_AWS_SECRET_ACCESS_KEY"],
+      :region                => ENV["PGARCH_REGION"],
       :persistent            => false
     })
   end
 
   def bucket
-    connection.directories.get ENV["PGBACKUPS_BUCKET"]
+    connection.directories.get ENV["PGARCH_BUCKET"]
   end
 
   def store

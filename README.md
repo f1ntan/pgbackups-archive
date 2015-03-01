@@ -53,10 +53,10 @@ the backup files.
 
 ### Apply environment variables
 
-    heroku config:add PGBACKUPS_AWS_ACCESS_KEY_ID="XXX"
-    heroku config:add PGBACKUPS_AWS_SECRET_ACCESS_KEY="YYY"
-    heroku config:add PGBACKUPS_BUCKET="myapp-backups"
-    heroku config:add PGBACKUPS_REGION="us-west-2"
+    heroku config:add PGARCH_AWS_ACCESS_KEY_ID="XXX"
+    heroku config:add PGARCH_AWS_SECRET_ACCESS_KEY="YYY"
+    heroku config:add PGARCH_BUCKET="myapp-backups"
+    heroku config:add PGARCH_REGION="us-west-2"
     heroku config:add PGBACKUPS_DATABASE_URL="your main app's DATABASE_URL or other follower URL here"
 
 * `PGBACKUPS_DATABASE_URL` can be set either to `DATABASE_URL` or a follower database you setup if you would prefer to not backup from your primary databse for performance reasons.

@@ -108,7 +108,7 @@ describe Heroku::Client::PgbackupsArchive do
     describe "#database_url" do
       describe "when an alternate database to backup is not set" do
         before do
-          ENV["PGBACKUPS_DATABASE_URL"] = nil
+          ENV["PGARCH_DATABASE_URL"] = nil
           ENV["DATABASE_URL"] = "default_url"
         end
 
@@ -119,7 +119,7 @@ describe Heroku::Client::PgbackupsArchive do
 
       describe "an alternate database to backup is set" do
         before do
-          ENV["PGBACKUPS_DATABASE_URL"] = "alternate_url"
+          ENV["PGARCH_DATABASE_URL"] = "alternate_url"
           ENV["DATABASE_URL"] = "default_url"
         end
 
