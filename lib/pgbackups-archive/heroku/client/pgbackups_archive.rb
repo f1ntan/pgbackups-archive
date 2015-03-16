@@ -24,8 +24,7 @@ class Heroku::Client::PgbackupsArchive
   end
 
   def capture
-    @pgbackup = @client.create_transfer(database_url, database_url, nil,
-      "BACKUP", :expire => true)
+    @pgbackup = @client.get_latest_backup
 
     until @pgbackup["finished_at"]
       print "."
